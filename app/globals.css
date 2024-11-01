@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.casino-table {
+  background: linear-gradient(to bottom, #1a472a, #0d2116);
+  border-radius: 0 0 50% 50%;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    inset 0 0 100px rgba(0, 0, 0, 0.3);
+}
+
+.table-pattern {
+  background-image: 
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.05) 75%);
+  background-size: 20px 20px, 60px 60px;
+  opacity: 0.4;
+}
+
+.table-felt {
+  background: linear-gradient(45deg, rgba(26, 71, 42, 0.9), rgba(13, 33, 22, 0.9));
+  box-shadow: 
+    inset 0 0 100px rgba(0, 0, 0, 0.7),
+    inset 0 0 60px rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 50% 50%;
+}
+
+.table-edge {
+  background: linear-gradient(to bottom, #8b4513, #654321);
+  box-shadow: 
+    inset 0 1px 3px rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.chip {
+  position: relative;
+  border: 8px dashed rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 0 15px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.chip::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+@keyframes celebrate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  }
+}
+
+.celebrate {
+  animation: celebrate 1s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .casino-table {
+    border-radius: 0 0 30% 30%;
+  }
+  
+  .table-felt {
+    border-radius: 0 0 30% 30%;
+  }
+}
